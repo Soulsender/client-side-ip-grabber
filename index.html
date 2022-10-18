@@ -17,18 +17,36 @@
 
     <div id="hidden-info">
         <p id="ip-p"></p>
+        <p id="ipapi-city"></p>
+        <p id="ipapi-country"></p>
+        <p>Timezone:</p><p id="ipapi-timezone"></p>
+        <p id="ipapi-lat"></p>
+        <p id="ipapi-long"></p>
+
         <p id="ua-p"></p>
         <p id="lang-p"></p>
+        
     </div>
 
     <script>
         document.getElementById('hidden-info').style.visibility = 'hidden';
 
         $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
+                document.getElementById('ipapi-city').innerHTML = ipapi.city;
+                document.getElementById('ipapi-country').innerHTML = ipapi.country_name;
+                document.getElementById('ipapi-timezone').innerHTML = ipapi.timezone;
+                document.getElementById('ipapi-lat').innerHTML = ipapi.latitude;
+                document.getElementById('ipapi-long').innerHTML = ipapi.longitude;
+
+
+            })
             document.getElementById('ip-p').innerHTML = data.ip;
             document.getElementById('ua-p').innerHTML = navigator.userAgent;
             document.getElementById('lang-p').innerHTML = navigator.language;
         })
+
+        
 
         function reveal() {
             document.getElementById('hidden-info').style.visibility = 'visible';
