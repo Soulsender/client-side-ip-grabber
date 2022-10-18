@@ -2,22 +2,38 @@
 <html>
 <head>
     <title>A Normal Website</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<!-- <img src="./roboteye.jpg"> -->
-<link rel="stylesheet" href="./style.css">
+<body>
+    <div class="background"></div>
 
-<div class="background"></div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$.getJSON("https://api.ipify.org?format=json", function(data) {
-    document.getElementById('ip-p').innerHTML = data.ip;
-    return data.ip
-})
-</script>
+    <h1>A totally normal website</h1>
+    <div class="button-div">
+        <button onclick="reveal()">Or is it?</button>
+    </div>
 
-<h1>A totally normal website</h1>
-<p id="ip-p"></p>
+    <div id="hidden-info">
+        <p id="ip-p"></p>
+        <p id="ua-p"></p>
+        <p id="lang-p"></p>
+    </div>
 
+    <script>
+        document.getElementById('hidden-info').style.visibility = 'hidden';
+
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            document.getElementById('ip-p').innerHTML = data.ip;
+            document.getElementById('ua-p').innerHTML = navigator.userAgent;
+            document.getElementById('lang-p').innerHTML = navigator.language;
+        })
+
+        function reveal() {
+            document.getElementById('hidden-info').style.visibility = 'visible';
+        }
+    </script>
+
+</body>
 </html>
