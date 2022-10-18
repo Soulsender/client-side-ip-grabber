@@ -2,9 +2,10 @@ html,body{
   margin:0;
   height:100%;
   font-family: "Lucida Console", "Courier New", monospace;
-  background-image: url('./roboteye.jpg');
+  /* background-image: url('./roboteye.jpg');
   background-size:cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: gray;
 }
 
 h1,p {
