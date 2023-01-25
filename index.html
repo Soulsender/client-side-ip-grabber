@@ -30,7 +30,7 @@
     </div>
     -->
     <script>
-        document.getElementById('hidden-info').style.visibility = 'hidden';
+        //document.getElementById('hidden-info').style.visibility = 'hidden';
 
         $.getJSON("https://api.ipify.org?format=json", function(data) {
             $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
